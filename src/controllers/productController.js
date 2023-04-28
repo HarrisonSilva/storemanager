@@ -2,6 +2,7 @@ const productService = require('../services/productService');
 
 const getProducts = async (req, res) => {
   const products = await productService.getProducts();
+  console.log('products', products);
  return res.status(200).json(products);
 };
 
