@@ -4,16 +4,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3001/products",
-    "url": "http://localhost:3001/sales/1",
-    "method": "GET",
+    "url": "http://localhost:3001/products/44545",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-04-26T19:43:38.897Z",
-    "modified": "2023-05-01T02:10:48.456Z",
+    "modified": "2023-05-01T23:16:13.000Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 111,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "{\n  \"name\": \"Martelo do thor\"\n}",
       "form": []
     },
     "tests": []
