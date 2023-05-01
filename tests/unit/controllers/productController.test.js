@@ -8,27 +8,30 @@ const productService = require('../../../src/services/productService')
 const productMock = require('../../unit/models/mock/productMock')
 
 describe('Testes products da camada controller', () => {
-  describe('Casos de Sucesso getProducts', () => {
+  afterEach(() => {
+    sinon.restore();
+  });
     it('getProducts retorna dados', async () => {
-      sinon.stub(productService, 'getProducts').resolves(productMock.products);
-      const req = {
-        body: [
-          { id: 1, name: 'Martelo de Thor' },
-          { id: 2, name: 'Traje de encolhimento' },
-          { id: 3, name: 'Escudo do Capitão América' }
-        ]
-      };
       const res = {};
+      const req = {};
       res.status = sinon.stub().returns(res);
-      res.json = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(productService, 'getProducts').resolves(productMock.products);
       await productController.getProducts(req, res);
       expect(res.status).to.have.been.calledWith(200);
-      expect(res.json).to.have.been.calledWith([
-        { id: 1, name: 'Martelo de Thor' },
-        { id: 2, name: 'Traje de encolhimento' },
-        { id: 3, name: 'Escudo do Capitão América' }
-      ]);
+      expect(res.json).to.have.been.calledWith(productMock.products);
     });
+     it('getProductsId retorna dados', async () => {
+      const res = {};
+       const req = {
+        params: {id: 2}
+      };
+      res.status = sinon.stub().returns(res);
+      res.json = sinon.stub().returns();
+      sinon.stub(productService, 'getProductsId').resolves(productMock.productsId);
+      await productController.getProductsId(req, res);
+      expect(res.status).to.have.been.calledWith(200);
+      expect(res.json).to.have.been.calledWith(productMock.productsId);
   });
 
 });
