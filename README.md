@@ -1,10 +1,3 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Store Manager
+
+Foi desenvolvido uma API utilizando a arquitetura MSC (model-service-controller) para um sistema de gerenciamento de vendas no formato dropshipping. A API permitirá operações como criação, visualização, exclusão e atualização de produtos e vendas. O banco de dados MySQL será utilizado para a gestão dos dados, e a API será implementada seguindo os princípios RESTful.
